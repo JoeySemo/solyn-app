@@ -1,32 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Solyn 🌱</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1.25rem;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Solyn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function greetUser() {
+            const name = document.getElementById('childName').value;
+            document.getElementById('output').textContent = `Hi ${name}! I'm Solyn. I'm here to learn with you.`;
+        }
+    </script>
 </head>
-<body>
-  <h1>Welcome to Solyn.org 🌱</h1>
-  <p>This is the beginning of something beautiful.</p>
+<body style="font-family: sans-serif; text-align: center; padding: 2em;">
+    <h1>Welcome to Solyn</h1>
+    <p>Your voice-guided learning buddy.</p>
+    <input id="childName" type="text" placeholder="What's your name?" />
+    <button onclick="greetUser()">Start Learning</button>
+    <p id="output" style="margin-top: 1em; font-size: 1.2em;"></p>
 </body>
 </html>
