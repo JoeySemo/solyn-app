@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solyn - Voice Learning</title>
+</head>
+<body>
+  <h1>Welcome to Solyn</h1>
+  <p>Hi! I'm your voice-guided learning buddy.</p>
+  <input id="userName" placeholder="Enter your name" />
+  <button onclick="startLearning()">Start Learning</button>
+  <p id="output"></p>
+
+  <script>
+    function startLearning() {
+      const name = document.getElementById('userName').value;
+      const message = `Hi ${name || 'friend'}! I'm Solyn. I'm here to learn with you.`;
+      document.getElementById('output').textContent = message;
+
+      // Speak it aloud
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(message);
+        speechSynthesis.speak(utterance);
+      } else {
+        alert("Speech synthesis not supported in this browser.");
+      }
+    }
+  </script>
+</body>
+</html>
